@@ -1,8 +1,14 @@
 fn main() {
 
+    let mut elves = max_value(&SAMPLE);
+    elves.sort();
+    println!("max = {}", elves.iter().max().unwrap());
+}
+
+fn max_value(input: &str) -> Vec<usize>{
     let mut elves = Vec::new();
     let mut sum = 0;
-    for line in SAMPLE.lines()
+    for line in input.lines()
     {
         if line.is_empty()
         {
@@ -13,7 +19,7 @@ fn main() {
         }
 
     }
-    println!("max = {}", elves.iter().max().unwrap());
+    elves
 }
 
 
